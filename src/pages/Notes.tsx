@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Sidebar from '../components/Sidebar'
 import '../styles/pages/notes.css'
-import { FiSidebar, FiPlus, FiSave } from 'react-icons/fi'
+import { FiSidebar, FiSave } from 'react-icons/fi'
 
 export default function Notes(){
     const [ date, setDate ] = useState<string>('')
