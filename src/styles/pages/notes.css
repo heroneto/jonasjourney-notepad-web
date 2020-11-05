@@ -1,0 +1,223 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.sidebarContainer {
+    max-width: 300px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: red;
+}
+
+.content {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.content .header {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.content .header .hideMenu {
+    background-color: rgba(0, 0, 0, 0);   
+    border: none; 
+    cursor: pointer;
+    color: #9C9C96;
+    transition: .2s;
+    outline: 0 !important;
+}
+
+.content .header .hideMenu:hover {
+    color: #6b6b67;
+}
+
+.content .header .actions {
+    display: flex;
+    width: 250px;
+    justify-content: space-evenly;
+}
+
+.actions .activeButton {
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3F7F7F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 30px;
+    color: #FFF;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.actions .activeButton:hover {
+    background-color: #477070;
+}
+
+.actions .inactiveButton {
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #F3F2EA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 30px;
+    color: #B4B4B4;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.actions .inactiveButton:hover {
+    background-color: #d3d2cb;
+}
+
+.editorContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.editorContainer .editorHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.editorContainer .editorHeader input {
+    background-color: #F3F2EA;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.editorContainer .editorHeader .title {
+    width: 70%;
+}
+
+.editorContainer .editorHeader .date {
+    width: 20%;
+}
+
+.editorContainer .editor {
+    margin-top: 10px;
+    
+}
+
+.editorContainer .editor textarea {
+    background-color: #F3F2EA;
+    padding: 10px;
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.floatIcon {
+    display: none;
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+}
+
+.floatIcon .saveNote {
+    padding: 16px;
+    border: none;
+    background-color: #3F7F7F;
+    border-radius: 50%;
+    box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
+    cursor: pointer;
+    transition: .2s;
+    outline: 0 !important;
+
+}
+
+.floatIcon .saveNote:hover {
+    background-color: #477070;
+
+}
+
+@media (max-width: 1100px){
+    .sidebarContainer {
+        display: none;
+    }
+    .content {
+        width: 100%;
+    }
+
+    .editorContainer .editorHeader {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .editorContainer .editorHeader .title {
+        width: 100%;
+    }
+    
+    .editorContainer .editorHeader .date {
+        width: auto;
+        margin-top: 10px;
+        
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 800px){
+
+    .actions .activeButton {
+        display: none;
+    }
+
+    .content .header .actions {
+        justify-content: flex-end;
+    }
+
+    .editorContainer .editorHeader {
+        flex-direction: column;
+    }
+
+    .editorContainer .editorHeader .title {
+        width: 100%;
+    }
+    
+    .editorContainer .editorHeader .date {
+        width: auto;
+        margin-top: 10px;
+        align-self: flex-end;
+    }
+
+    .floatIcon { 
+        display: block;
+    }
+}
+
+@media (max-width: 750px) {
+    .editorContainer .editorHeader .title {
+        width: 100%;
+    }
+    
+    .editorContainer .editorHeader .date {
+        width: auto;
+        margin-top: 10px;
+        align-self: flex-end;
+    }
+}
+
