@@ -1,104 +1,10 @@
-.container {
+.notes-view-container {
     width: 100vw;
     height: 100vh;
-    display: flex;
+    display: grid;
 }
 
-.sidebarContainer {
-    max-width: 300px;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: red;
-}
-
-.content {
-    width: 100%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-
-}
-
-.content .header {
-    display: flex;
-    justify-content: space-between;
-}
-
-
-.content .header .hideMenu {
-    background-color: rgba(0, 0, 0, 0);   
-    border: none; 
-    cursor: pointer;
-    color: #9C9C96;
-    transition: .2s;
-    outline: 0 !important;
-}
-
-.content .header .hideMenu:hover {
-    color: #6b6b67;
-}
-
-.content .header .actions {
-    display: flex;
-    width: 250px;
-    justify-content: space-evenly;
-}
-
-.actions .activeButton {
-    padding: 15px;
-    border: none;
-    border-radius: 4px;
-    background-color: #3F7F7F;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 30px;
-    color: #FFF;
-    font-weight: 800;
-    cursor: pointer;
-    transition: .2s;
-}
-
-.actions .activeButton:hover {
-    background-color: #477070;
-}
-
-.actions .inactiveButton {
-    padding: 15px;
-    border: none;
-    border-radius: 4px;
-    background-color: #F3F2EA;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 30px;
-    color: #B4B4B4;
-    font-weight: 800;
-    cursor: pointer;
-    transition: .2s;
-}
-
-.actions .inactiveButton:hover {
-    background-color: #d3d2cb;
-}
-
-.editorContainer {
-    display: flex;
-    flex-direction: column;
-}
-
-
-.editorContainer .editorHeader {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.editorContainer .editorHeader input {
+.notes-view-container input {
     background-color: #F3F2EA;
     border: none;
     border-radius: 4px;
@@ -106,20 +12,200 @@
     box-sizing: border-box;
 }
 
-.editorContainer .editorHeader .title {
+.notes-view-container button{
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3F7F7F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    color: #FFF;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .2s;
+    outline: 0 !important; 
+}
+
+.notes-view-container button:hover {
+    background-color: #4a9e9e;
+}
+
+.notes-view-container .listContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.notes-view-container .listContainer .titleContainer {
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+}
+
+.notes-view-container .listContainer .titleContainer .toggleMenu {
+    border: none;
+    background: none;
+    color: #3F7F7F;
+    cursor: pointer;
+    outline: none;
+    max-width: 64px;
+}
+
+.notes-view-container .listContainer .titleContainer  span {
+    font-size: 14px;
+    font-weight: 600;
+    align-self: center;
+}
+
+.notes-view-container .listContainer .listActionsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.notes-view-container .listContainer .listActionsContainer input{
+    width: 90%;
+    max-width: 500px;
+}
+
+.notes-view-container .listContainer .listActionsContainer button {
+    margin-top: 10px;    
+}
+
+.notes-view-container .listContainer .list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 2px;
+    padding-right: 2px;
+    align-items: center;
+    margin-top: 18px;    
+}
+
+.notes-view-container .listContainer .list .title {
+    font-size: 14px;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.notes-view-container .listContainer .list .itemContainer {
+    display: flex;
+    width: 100%;
+    background-color: #FBFCF7;
+    color: #000;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: .2s;
+    outline: 0 !important;        
+}
+
+.notes-view-container .listContainer .list .itemContainer:hover {
+    background-color: #F3F2EA;
+}
+
+.notes-view-container .listContainer .list .itemContainer .itemContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.notes-view-container .listContainer .list .itemContainer .itemContent .noteTitle{
+    font-family: "Archivo", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.notes-view-container .listContainer .list .itemContainer .itemContent .noteBody {
+    color: #5B5B5B;
+    text-align: left;
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+
+
+
+
+
+.notes-view-container .content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.notes-view-container .content .header {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.notes-view-container .content .header .hideMenu {
+    background-color: rgba(0, 0, 0, 0);   
+    border: none; 
+    cursor: pointer;
+    color: #9C9C96;
+    transition: .2s;
+    outline: 0 !important;
+    width: auto;
+    padding: 0;
+}
+
+.notes-view-container .content .header .hideMenu:hover {
+    color: #6b6b67;
+}
+
+.notes-view-container .content .header .actions {
+    display: flex;
+    flex-direction: row;
+    width: 250px;
+    justify-content: flex-end;
+}
+
+.notes-view-container .actions .inactiveButton { 
+    justify-self: flex-end;
+    align-self: flex-end;
+    background-color: #F3F2EA;
+    color: #B4B4B4;
+    margin-left: 5px;
+}
+
+.notes-view-container .actions .inactiveButton:hover {
+    background-color: #751b14;
+    color: #FFF;
+
+}
+
+.notes-view-container .editorContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.notes-view-container .editorContainer .editorHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+
+.notes-view-container .editorContainer .editorHeader .title {
     width: 70%;
 }
 
-.editorContainer .editorHeader .date {
+.notes-view-container .editorContainer .editorHeader .date {
     width: 20%;
 }
 
-.editorContainer .editor {
+.notes-view-container .editorContainer .editor {
     margin-top: 10px;
     
 }
 
-.editorContainer .editor textarea {
+.notes-view-container .editorContainer .editor .noteInput {
     background-color: #F3F2EA;
     padding: 10px;
     border: none;
@@ -128,17 +214,18 @@
     height: 100%;
     border-radius: 4px;
     resize: vertical;
+    outline: 0; 
 }
 
-.floatIcon {
-    display: none;
+.notes-view-container .floatIcon {
     position: fixed;
     right: 16px;
     bottom: 16px;
+
 }
 
-.floatIcon .saveNote {
-    padding: 16px;
+.notes-view-container .floatIcon button {
+    padding: 12px;
     border: none;
     background-color: #3F7F7F;
     border-radius: 50%;
@@ -146,15 +233,16 @@
     cursor: pointer;
     transition: .2s;
     outline: 0 !important;
-
+    padding: 0px;
+    width: 64px;
+    height: 64px;
 }
 
-.floatIcon .saveNote:hover {
-    background-color: #477070;
+.notes-view-container .floatIcon .saveNote:hover {
+    background-color: #4a9e9e;
 
 }
-
-@media (max-width: 1100px){
+/* @media (max-width: 1100px){
     .sidebarContainer {
         display: none;
     }
@@ -178,27 +266,19 @@
         
         align-self: flex-end;
     }
-}
+} */
 
-@media (max-width: 800px){
+@media (max-width: 600px){
 
-    .actions .activeButton {
-        display: none;
-    }
-
-    .content .header .actions {
-        justify-content: flex-end;
-    }
-
-    .editorContainer .editorHeader {
+    .notes-view-container .editorContainer .editorHeader {
         flex-direction: column;
     }
 
-    .editorContainer .editorHeader .title {
+    .notes-view-container .editorContainer .editorHeader .title {
         width: 100%;
     }
     
-    .editorContainer .editorHeader .date {
+    .notes-view-container .editorContainer .editorHeader .date {
         width: auto;
         margin-top: 10px;
         align-self: flex-end;
@@ -209,15 +289,8 @@
     }
 }
 
-@media (max-width: 750px) {
-    .editorContainer .editorHeader .title {
-        width: 100%;
-    }
-    
-    .editorContainer .editorHeader .date {
-        width: auto;
-        margin-top: 10px;
-        align-self: flex-end;
-    }
-}
 
+
+    
+    
+    
