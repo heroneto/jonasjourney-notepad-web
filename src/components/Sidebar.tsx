@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/components/sidebar.css'
 import { FiChevronLeft } from 'react-icons/fi'
-import { Link, useLocation, NavLink } from 'react-router-dom'
+import { useLocation, NavLink } from 'react-router-dom'
 
 interface sidebarProps {
     closeSidebarFunc: Function
