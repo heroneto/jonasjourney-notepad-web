@@ -3,7 +3,7 @@
 Este projeto foi criado para fins acadêmicos em React JS com Typescript. É um App web responsivo que permite o usuário fazer o CRUD de notas e comentários.
 
 ### Netlify
-<a href="https://pensive-shirley-9b5d0f.netlify.app/notes" alt="Acesso Netlify" target="_blank">Demo</a>
+<a href="https://pensive-shirley-9b5d0f.netlify.app" alt="Acesso Netlify" target="_blank">Demo</a>
 
 ### Projeto público no Figma
 <a href="https://www.figma.com/file/NOHq2hHsl4m10QIDKQiYSm/Jonas-Journey-Notes" alt="Acesso projet oFigma" target="_blank">Acessar Figma</a>
