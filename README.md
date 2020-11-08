@@ -21,6 +21,7 @@ Este projeto foi criado para fins acadêmicos em React JS com Typescript. É um 
   - [ ] Aplicar paginação de resultados.
   - [ ] Aplicar opções de ordenação nos resultados
   - [ ] Aplicar filtros de data
+  - [ ] Parametrizar servidor backend
 
 ## Screenshots
 
