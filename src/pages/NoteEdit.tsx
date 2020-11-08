@@ -18,7 +18,20 @@ const NoteEdit = () => {
 	// const [ isCreating, setIsCreating ] = useState<Boolean>(false)
   // const [ autoSaveFeedback, setAutoSaveFeedback ] = useState<string>("")
 
-  function getNote(){
+  // function getNote(){
+  //   const paramter = history.location.pathname.split("/")
+  //   const id = paramter[paramter.length-1]
+  //   api.get(`/note/${id}`).then(result => {
+  //     const note : notesProps = result.data
+  //     setId(note._id)
+  //     setTitle(note.title)
+  //     setBody(note.body)
+  //     const [ day, month, year] = new Date(note.date).toLocaleDateString().split('/')
+  //     setDate(`${year}-${month}-${day}`)     
+  //   })
+  // }
+
+  useEffect(() => {
     const paramter = history.location.pathname.split("/")
     const id = paramter[paramter.length-1]
     api.get(`/note/${id}`).then(result => {
@@ -29,10 +42,6 @@ const NoteEdit = () => {
       const [ day, month, year] = new Date(note.date).toLocaleDateString().split('/')
       setDate(`${year}-${month}-${day}`)     
     })
-  }
-
-  useEffect(() => {
-    getNote()
   },[id])
 
   async function removeNote(){
