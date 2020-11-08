@@ -10,6 +10,10 @@ import { notesProps } from './Notes'
 
 const NoteEdit = () => {
   const history = useHistory()
+  const paramter = history.location.pathname.split("/")
+  const parameterId = paramter[paramter.length-1]
+
+
   const [ id, setId ] = useState<string>("")
 	const [ title, setTitle ] = useState<string>("")
 	const [ date, setDate ] = useState<string>('')
@@ -32,9 +36,7 @@ const NoteEdit = () => {
   // }
 
   useEffect(() => {
-    const paramter = history.location.pathname.split("/")
-    const id = paramter[paramter.length-1]
-    api.get(`/note/${id}`).then(result => {
+    api.get(`/note/${parameterId}`).then(result => {
       const note : notesProps = result.data
       setId(note._id)
       setTitle(note.title)
@@ -42,7 +44,7 @@ const NoteEdit = () => {
       const [ day, month, year] = new Date(note.date).toLocaleDateString().split('/')
       setDate(`${year}-${month}-${day}`)     
     })
-  },[id])
+  },[parameterId])
 
   async function removeNote(){
     const result = await api.delete(`/notes/${id}`)
