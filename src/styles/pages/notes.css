@@ -1,7 +1,8 @@
 .notes-view-container {
-    width: 50%;
-    height: 80%;
+    width: 100vw;
+    height: 100vh;
     display: grid;
+    grid-template-columns: 1fr;
     background-color: #FFF;
     box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
     overflow-x: scroll;
@@ -15,7 +16,7 @@
     box-sizing: border-box;
 }
 
-.notes-view-container a.button{
+.notes-view-container .button{
     padding: 8px;
     border: none;
     border-radius: 4px;
@@ -29,17 +30,16 @@
     cursor: pointer;
     transition: .2s;
     outline: 0 !important; 
-    text-decoration: none;
+    text-decoration: none;    
 }
 
-.notes-view-container a.button:hover {
+.notes-view-container .button:hover {
     background-color: #4a9e9e;
 }
 
 .notes-view-container .listContainer {
     display: flex;
-    flex-direction: column;
-
+    flex-direction: column;    
 }
 
 .notes-view-container .listContainer .titleContainer {
@@ -85,14 +85,15 @@
 }
 
 .notes-view-container .listContainer .list {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     width: 100%;
     align-items: center;
     margin-top: 18px;    
 }
 
 .notes-view-container .listContainer .list .title {
+    display: none;
     font-size: 14px;
     font-family: 'Archivo', sans-serif;
     font-weight: 800;
@@ -105,7 +106,7 @@
     width: 100%;
     background-color: #FBFCF7;
     color: #000;
-    justify-content: space-between;
+    justify-content: center;
     cursor: pointer;
     transition: .2s;
     outline: 0 !important;
@@ -120,13 +121,15 @@
 .notes-view-container .listContainer .list .itemContainer .itemContent {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    padding: 20px;
 }
 
 .notes-view-container .listContainer .list .itemContainer .itemContent .noteTitle{
     font-family: "Archivo", sans-serif;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 14px;
+    text-align: center;
 }
 
 .notes-view-container .listContainer .list .itemContainer .itemContent .noteBody {
@@ -135,14 +138,65 @@
     font-size: 12px;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
+    text-align: center;
+}
+
+.notes-view-container .listContainer .list .itemContainer .itemContent .noteDate {
+    color: #5B5B5B;
+    text-align: left;
+    font-size: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+
+.notes-view-container .listContainer .list .itemContainer .itemIcon {
+    display: none;    
 }
 
 
+@media (max-width: 900px){
+    .notes-view-container .listContainer .list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 750px){
+    .notes-view-container .listContainer .list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
 @media (max-width: 650px){
+    .notes-view-container .listContainer .list {
+        grid-template-columns: repeat(1, 1fr);
+    }
 
-    .notes-view-container {
-        width: 100%;
-        height: 100%;
+    .notes-view-container .listContainer .list .itemContainer .itemContent {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        /* padding: 20px; */
+    }
+
+    .notes-view-container .listContainer .list .itemContainer .itemContent span {
+        text-align: start;
+    }
+    
+    .notes-view-container .listContainer .list .itemContainer .itemIcon {
+        display: flex;    
+    }
+
+    .notes-view-container .listContainer .list .itemContainer {    
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px;
+    }
+
+}
+
+@media (max-width: 450px){
+    .notes-view-container .button {
+        display: none;
     }
 }

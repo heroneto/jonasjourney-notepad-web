@@ -4,6 +4,7 @@ import '../styles/pages/notes.css'
 import { FiMenu, FiChevronRight, FiPlus} from 'react-icons/fi'
 import api from '../services/api'
 import { Link  } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 
 export interface notesProps {
@@ -16,11 +17,17 @@ export interface notesProps {
 }
 let timeout: any = ""
 
+toast.configure( {
+  autoClose: 1500,
+  position: "top-center",
+  limit: 3
+})
+
 
 export default function Notes(){
 	const [ notes, setNotes ] = useState<notesProps[]>([])
 	const [ searchValue, setSearchValue ] = useState<string>('')
-	const [ showSidebar, setShowSidebar ] = useState<Boolean>(window.innerWidth > 1280) 
+	const [ showSidebar, setShowSidebar ] = useState<Boolean>(false)
   const [ execucoes, setExecucoes ] = useState<number>(0)
 
 	async function getNotes(){
@@ -31,8 +38,24 @@ export default function Notes(){
   async function searchNote(value: string){
     const result = await api.get(`/notes/search?text=${value}`)
     setNotes(result.data)
-	}
+  }
+  
+  async function createNote(){
+    const bodyReq = {
+      title: "",
+      body: "",
+      date: new Date()
+    }
+    const result = await api.post('/notes', bodyReq)
+    if(result.status === 201){
+      toast.success("nota criada com sucesso")
+      getNotes()
+    }else {
+      toast.error("Falha na criação da nota")
+    }
+  }
 
+  
 
   function handleSearch(value:string){   
 		setSearchValue(value)
@@ -52,10 +75,7 @@ export default function Notes(){
 
 	return (
       <div 
-        className="notes-view-container"
-        style={{
-          gridTemplateColumns: (showSidebar && window.innerWidth > 600) ?  '250px 1fr' : '1fr' }}  
-      >
+        className="notes-view-container">
         {showSidebar && 
           <Sidebar closeSidebarFunc={() => setShowSidebar(false)} />               
         }
@@ -80,11 +100,9 @@ export default function Notes(){
                 placeholder="Digite para pesquisar"
               />
               {execucoes} Execuções
-              {window.innerWidth > 600 &&
-                <Link to="/note/create" className="button">                  
+                <button className="button" onClick={createNote}> 
                   Nova Nota
-                </Link>
-              }               
+                </button>         
             </div>
             <div className="list">
               <span className="title">
@@ -92,13 +110,16 @@ export default function Notes(){
               </span>
               {notes.map(note => {
                 return (
-                  <Link to={`/note/edit/${note._id}`} key={note._id} className="itemContainer">                            
+                  <Link to={`/note/${note._id}`} key={note._id} className="itemContainer">                            
                     <div className="itemContent">
                       <span className="noteTitle">
-                        {note.title}
+                        {note.title || "Nova nota..."}
                       </span>
                       <span className="noteBody">
-                        {note.body.slice(0, 30)}
+                        {`${note.body.slice(0, 40)}...`}
+                      </span>
+                      <span className="noteDate">
+                        {new Date(note.date).toLocaleDateString()}
                       </span>
                     </div>
                     <div className="itemIcon">
@@ -109,12 +130,12 @@ export default function Notes(){
               })}
             </div>                            
           </div>
-            <Link
-              to="/note/create"
+            <button
               className="floatIcon" 
+              onClick={createNote}
             >
               <FiPlus size={32} color={"#FFF"} />
-            </Link>
+            </button>
       </div>
 	)
 }

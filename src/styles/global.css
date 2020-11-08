@@ -3,21 +3,12 @@ body{
     padding: 0px;
     margin: 0px;
     background-size: contain;  
+
 }
 
 body, * {
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
-}
-
-
-body .container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0,0,0,0.7);     
 }
 
 
@@ -40,13 +31,13 @@ body .container {
     align-items: center;
 }
 
-.floatIcon .saveNote:hover {
+.floatIcon:hover {
     background-color: #4a9e9e;
 }
 
-@media (max-width: 650px){
+@media (max-width: 450px){
     .notes-view-container .floatIcon { 
-        display: flex;
+        /* display: flex; */
         visibility: visible;
     }    
 }

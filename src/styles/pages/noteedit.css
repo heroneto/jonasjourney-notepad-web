@@ -1,6 +1,6 @@
 .noteEdit-container {
-  width: 50%;
-  height: 80%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   background-color: #FFF;
   box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
@@ -131,7 +131,8 @@
 .noteEdit-container .editorContainer {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  width: 100%;
+  height: 80%;
 }
 
 
@@ -139,6 +140,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  padding: 10px;
 }
 
 
@@ -154,15 +156,18 @@
 
 .noteEdit-container .editorContainer .editor {
   margin-top: 10px;
-  
+  height: 100%;  
 }
 
 .noteEdit-container .editorContainer .editor .noteInput {
-  background-color: #F3F2EA;
+  border-top: 1px solid #F3F2EA;
   padding: 10px;
-  border: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
   box-sizing: border-box;
   width: 100%;
+  height: 100%;
   border-radius: 4px;
   resize: vertical;
   outline: 0; 
@@ -173,8 +178,8 @@
 @media (max-width: 650px){
 
   .noteEdit-container {
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
   }
   .noteEdit-container .header .actions .activeButton {
     visibility: hidden;
