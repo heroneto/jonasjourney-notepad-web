@@ -4,7 +4,9 @@ import './styles/global.css'
 
 function App() {
   return (
-    <Routes />
+    <div className="container">
+      <Routes />
+    </div>
   );
 }
 

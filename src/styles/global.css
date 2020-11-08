@@ -1,6 +1,52 @@
-body {
+body{
+    background-color: #FBFCF7;
     padding: 0px;
     margin: 0px;
-    background-color: #FBFCF7;
+    background-size: contain;  
+}
+
+body, * {
     font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+
+body .container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.7);     
+}
+
+
+.floatIcon {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    border: none;
+    border-radius: 50%;
+    background-color: #3F7F7F;
+    box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
+    cursor: pointer;
+    transition: .2s;
+    outline: 0 !important;
+    padding: 0px;
+    width: 64px;
+    height: 64px;
+    visibility: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.floatIcon .saveNote:hover {
+    background-color: #4a9e9e;
+}
+
+@media (max-width: 650px){
+    .notes-view-container .floatIcon { 
+        display: flex;
+        visibility: visible;
+    }    
 }

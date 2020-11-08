@@ -1,7 +1,10 @@
 .notes-view-container {
-    width: 100vw;
-    height: 100vh;
+    width: 50%;
+    height: 80%;
     display: grid;
+    background-color: #FFF;
+    box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
+    overflow-x: scroll;
 }
 
 .notes-view-container input {
@@ -12,7 +15,7 @@
     box-sizing: border-box;
 }
 
-.notes-view-container button{
+.notes-view-container a.button{
     padding: 8px;
     border: none;
     border-radius: 4px;
@@ -26,20 +29,24 @@
     cursor: pointer;
     transition: .2s;
     outline: 0 !important; 
+    text-decoration: none;
 }
 
-.notes-view-container button:hover {
+.notes-view-container a.button:hover {
     background-color: #4a9e9e;
 }
 
 .notes-view-container .listContainer {
     display: flex;
     flex-direction: column;
+
 }
 
 .notes-view-container .listContainer .titleContainer {
     display: grid;
-    grid-template-columns: 1fr 8fr;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
 }
 
 .notes-view-container .listContainer .titleContainer .toggleMenu {
@@ -49,12 +56,14 @@
     cursor: pointer;
     outline: none;
     max-width: 64px;
+    position: absolute;
 }
 
 .notes-view-container .listContainer .titleContainer  span {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 600;
     align-self: center;
+    justify-self: center;
 }
 
 .notes-view-container .listContainer .listActionsContainer {
@@ -68,9 +77,10 @@
 .notes-view-container .listContainer .listActionsContainer input{
     width: 90%;
     max-width: 500px;
+    margin-top: 32px;
 }
 
-.notes-view-container .listContainer .listActionsContainer button {
+.notes-view-container .listContainer .listActionsContainer .button {
     margin-top: 10px;    
 }
 
@@ -78,8 +88,6 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding-left: 2px;
-    padding-right: 2px;
     align-items: center;
     margin-top: 18px;    
 }
@@ -92,6 +100,7 @@
 }
 
 .notes-view-container .listContainer .list .itemContainer {
+    border: none;
     display: flex;
     width: 100%;
     background-color: #FBFCF7;
@@ -99,7 +108,9 @@
     justify-content: space-between;
     cursor: pointer;
     transition: .2s;
-    outline: 0 !important;        
+    outline: 0 !important;
+    padding: 10px;
+    text-decoration: none;
 }
 
 .notes-view-container .listContainer .list .itemContainer:hover {
@@ -128,169 +139,10 @@
 
 
 
+@media (max-width: 650px){
 
-
-
-.notes-view-container .content {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-.notes-view-container .content .header {
-    display: flex;
-    justify-content: space-between;
-}
-
-
-.notes-view-container .content .header .hideMenu {
-    background-color: rgba(0, 0, 0, 0);   
-    border: none; 
-    cursor: pointer;
-    color: #9C9C96;
-    transition: .2s;
-    outline: 0 !important;
-    width: auto;
-    padding: 0;
-}
-
-.notes-view-container .content .header .hideMenu:hover {
-    color: #6b6b67;
-}
-
-.notes-view-container .content .header .actions {
-    display: flex;
-    flex-direction: row;
-    width: 250px;
-    justify-content: flex-end;
-}
-
-.notes-view-container .actions .inactiveButton { 
-    justify-self: flex-end;
-    align-self: flex-end;
-    background-color: #F3F2EA;
-    color: #B4B4B4;
-    margin-left: 5px;
-}
-
-.notes-view-container .actions .inactiveButton:hover {
-    background-color: #751b14;
-    color: #FFF;
-
-}
-
-.notes-view-container .editorContainer {
-    display: flex;
-    flex-direction: column;
-}
-
-
-.notes-view-container .editorContainer .editorHeader {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-
-.notes-view-container .editorContainer .editorHeader .title {
-    width: 70%;
-}
-
-.notes-view-container .editorContainer .editorHeader .date {
-    width: 20%;
-}
-
-.notes-view-container .editorContainer .editor {
-    margin-top: 10px;
-    
-}
-
-.notes-view-container .editorContainer .editor .noteInput {
-    background-color: #F3F2EA;
-    padding: 10px;
-    border: none;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    border-radius: 4px;
-    resize: vertical;
-    outline: 0; 
-}
-
-.notes-view-container .floatIcon {
-    position: fixed;
-    right: 16px;
-    bottom: 16px;
-
-}
-
-.notes-view-container .floatIcon button {
-    padding: 12px;
-    border: none;
-    background-color: #3F7F7F;
-    border-radius: 50%;
-    box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
-    cursor: pointer;
-    transition: .2s;
-    outline: 0 !important;
-    padding: 0px;
-    width: 64px;
-    height: 64px;
-}
-
-.notes-view-container .floatIcon .saveNote:hover {
-    background-color: #4a9e9e;
-
-}
-/* @media (max-width: 1100px){
-    .sidebarContainer {
-        display: none;
-    }
-    .content {
+    .notes-view-container {
         width: 100%;
-    }
-
-    .editorContainer .editorHeader {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .editorContainer .editorHeader .title {
-        width: 100%;
-    }
-    
-    .editorContainer .editorHeader .date {
-        width: auto;
-        margin-top: 10px;
-        
-        align-self: flex-end;
-    }
-} */
-
-@media (max-width: 600px){
-
-    .notes-view-container .editorContainer .editorHeader {
-        flex-direction: column;
-    }
-
-    .notes-view-container .editorContainer .editorHeader .title {
-        width: 100%;
-    }
-    
-    .notes-view-container .editorContainer .editorHeader .date {
-        width: auto;
-        margin-top: 10px;
-        align-self: flex-end;
-    }
-
-    .floatIcon { 
-        display: block;
+        height: 100%;
     }
 }
-
-
-
-    
-    
-    

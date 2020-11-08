@@ -40,8 +40,8 @@ const Sidebar : React.FC <sidebarProps> = ({closeSidebarFunc}) => {
                 >
                     Notas
                 </NavLink>
-                <NavLink 
-                    to="/comments" 
+                {/* <NavLink 
+                    to="/comments"
                     className="menuOption"
                     activeClassName={location.pathname === "/comments" ? "selected" : ""}
                     activeStyle={{
@@ -49,7 +49,7 @@ const Sidebar : React.FC <sidebarProps> = ({closeSidebarFunc}) => {
                     }}
                 >
                     Comentários
-                </NavLink>
+                </NavLink> */}
             </div>
 
 

@@ -1,0 +1,200 @@
+.noteEdit-container {
+  width: 50%;
+  height: 80%;
+  display: flex;
+  background-color: #FFF;
+  box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
+  flex-direction: column;
+}
+
+
+.noteEdit-container .header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+}
+
+.noteEdit-container .header .actions .activeButton{
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3F7F7F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  color: #FFF;
+  font-weight: 800;
+  cursor: pointer;
+  transition: .2s;
+  outline: 0 !important; 
+  text-decoration: none;
+}
+
+.noteEdit-container .header .actions .activeButton:hover {
+  background-color: #4a9e9e;
+}
+
+.noteEdit-container .header .actions .inactiveButton{
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: #c2c2c2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  color: rgb(83, 83, 83);
+  font-weight: 800;
+  cursor: pointer;
+  transition: .2s;
+  outline: 0 !important; 
+  text-decoration: none;
+}
+
+.noteEdit-container .header .actions .inactiveButton:hover {
+  background-color: #520b0b;
+}
+
+
+.noteEdit-container input {
+  background-color: #F3F2EA;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+
+.noteEdit-container .header .goBack {
+  background-color: rgba(0, 0, 0, 0);   
+  border: none; 
+  cursor: pointer;
+  color: #9C9C96;
+  transition: .2s;
+  outline: 0 !important;
+  width: auto;
+  padding: 0;
+}
+
+.noteEdit-container .header .goBack:hover {
+  color: #6b6b67;
+}
+
+.noteEdit-container .header .actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.noteEdit-container .header .actions span {
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 3px;
+  color: #FFF;
+}
+
+.noteEdit-container .header .actions .autoSaveStatus-success {
+  background-color: #3F7F7F;
+}
+
+.noteEdit-container .header .actions .autoSaveStatus-error {
+  background-color: #F00;
+}
+
+.noteEdit-container .header .actions .autoSaveStatus-updating {
+  background-color: #d6c317;
+}
+
+
+
+.noteEdit-container .actions .inactiveButton { 
+  justify-self: flex-end;
+  align-self: flex-end;
+  background-color: #F3F2EA;
+  color: #B4B4B4;
+  margin-left: 5px;
+}
+
+.noteEdit-container .actions .inactiveButton:hover {
+  background-color: #751b14;
+  color: #FFF;
+
+}
+
+.noteEdit-container .editorContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+
+.noteEdit-container .editorContainer .editorHeader {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+
+.noteEdit-container .editorContainer .editorHeader .title {
+  width: 100%;
+}
+
+.noteEdit-container .editorContainer .editorHeader .date {
+  width: 30%;
+  margin-top: 10px;
+  align-self: flex-end;
+}
+
+.noteEdit-container .editorContainer .editor {
+  margin-top: 10px;
+  
+}
+
+.noteEdit-container .editorContainer .editor .noteInput {
+  background-color: #F3F2EA;
+  padding: 10px;
+  border: none;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 4px;
+  resize: vertical;
+  outline: 0; 
+}
+
+
+
+@media (max-width: 650px){
+
+  .noteEdit-container {
+      width: 100%;
+      height: 100%;
+  }
+  .noteEdit-container .header .actions .activeButton {
+    visibility: hidden;
+  }
+
+
+  .noteEdit-container .editorContainer .editorHeader {
+      flex-direction: column;
+  }
+
+  .noteEdit-container .editorContainer .editorHeader .title {
+      width: 100%;
+  }
+  
+  .noteEdit-container .editorContainer .editorHeader .date {
+      width: auto;
+  }
+
+  .noteEdit-container .floatIcon { 
+      display: block;
+      visibility: visible;
+  }    
+}

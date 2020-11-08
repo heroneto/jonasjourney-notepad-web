@@ -16,6 +16,7 @@
     flex-direction: column;
     padding-top: 10px;
     background-color: #F3F2EA;
+    z-index: 1;
 }
 
 .sideBar .hideMenuContainer{
@@ -26,9 +27,12 @@
 }
 
 .sideBar .hideMenuContainer button {
+    border: none;
+    outline: none;
     background-color: #F3F2EA;
     color: #000;
     width: auto;
+    cursor: pointer;
 }
 
 .sideBar .hideMenuContainer button:hover {
