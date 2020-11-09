@@ -36,8 +36,7 @@ body, * {
 }
 
 @media (max-width: 450px){
-    .notes-view-container .floatIcon { 
-        /* display: flex; */
+    .floatIcon { 
         visibility: visible;
     }    
 }
