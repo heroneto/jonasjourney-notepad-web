@@ -67,6 +67,7 @@
 }
 
 
+
 .noteEdit-container .header .goBack {
   background-color: rgba(0, 0, 0, 0);   
   border: none; 
@@ -132,7 +133,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 80%;
+  height: 100%;
 }
 
 
@@ -156,7 +157,8 @@
 
 .noteEdit-container .editorContainer .editor {
   margin-top: 10px;
-  height: 100%;  
+  height: 100%;
+  display: flex;
 }
 
 .noteEdit-container .editorContainer .editor .noteInput {
@@ -173,9 +175,176 @@
   outline: 0; 
 }
 
+.noteEdit-container .editorContainer .editor .comments-container {
+  display: flex;
+  flex-direction: column;
+  /* background-color: lightblue; */
+  width: 500px;
+  overflow-y: scroll;
+}
+
+.noteEdit-container .editorContainer .editor .comments-container .title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.noteEdit-container .editorContainer .editor .comments-container .commentInput {
+  padding: 5px;
+  width: 90%;
+  /* height: 100%; */
+  outline: none;
+  background-color: #F3F2EA;
+  border: none;
+  resize: vertical;
+}
+
+.noteEdit-container .editorContainer .editor .comments-container .inputContainer {
+  background-color: #F3F2EA;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.noteEdit-container .editorContainer .editor .comments-container .inputContainer button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: .2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.noteEdit-container .editorContainer .editor .comments-container .inputContainer button:hover {
+  background-color: #d1d1cf;
+  
+} 
 
 
-@media (max-width: 650px){
+.noteEdit-container .editorContainer .editor .comments-container .commentList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.noteEdit-container .editorContainer .editor .comments-container .commentList .comment {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #F3F2EA; 
+  box-sizing: border-box;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+
+.noteEdit-container .editorContainer .editor .comments-container .commentList .comment .commentDate {
+  text-align: end;
+  font-size: 10px;
+  color: #6b6b67;
+  font-weight: 500;
+  padding: 10px;
+}
+
+.noteEdit-container .editorContainer .editor .comments-container .commentList .comment .commentText {
+  font-size: 12px;
+  font-weight: 400;
+  padding: 5px;
+}
+
+.noteEdit-container .editorContainer .editor .comments-container .commentList .comment .commentActions {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.noteEdit-container .editorContainer .editor .comments-container .commentList .comment .commentActions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  width: 50%;
+  transition: .2s;
+  outline: none;
+}
+.noteEdit-container .editorContainer .editor .comments-container .commentList .comment .commentActions button:hover {
+  background-color: #d1d1cf;
+}
+
+.comment-edit-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 20%;
+  /* padding: 500px; */
+  background-color: rgba(0,0,0,0.4);
+}
+
+.comment-edit-modal .editor {
+  background-color: #FFF;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-edit-modal .editor .inputContainer {
+  width: 100%;
+  display: flex;
+  background-color: #F3F2EA;
+  height: 90%;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.comment-edit-modal .editor button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: .2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  align-self: flex-end;
+  margin: 3px;
+}
+
+.comment-edit-modal .editor button:hover {
+  background-color: #d1d1cf;  
+} 
+
+.comment-edit-modal .editor .inputContainer .commentInput {
+  padding: 5px;
+  width: 90%;
+  height: 100%;
+  outline: none;
+  background-color: #F3F2EA;
+  border: none;
+  resize: vertical;
+}
+
+
+
+
+@media (max-width: 450px){
 
   .noteEdit-container {
       width: 100vw;
@@ -185,6 +354,17 @@
     visibility: hidden;
   }
 
+  .noteEdit-container .editorContainer .editor {
+    flex-direction: column;
+  }
+
+  .noteEdit-container .editorContainer .editor .comments-container{
+    width: 100%;
+  }
+
+  .noteEdit-container .editorContainer .editor .comments-container .commentList .comment .commentActions button {
+    padding: 15px;
+  }
 
   .noteEdit-container .editorContainer .editorHeader {
       flex-direction: column;
@@ -198,8 +378,7 @@
       width: auto;
   }
 
-  .noteEdit-container .floatIcon { 
-      display: block;
-      visibility: visible;
-  }    
+  .comment-edit-modal {
+    padding: 10%;
+  }
 }

@@ -16,8 +16,8 @@ Este projeto foi criado para fins acadêmicos em React JS com Typescript. É um 
   - [x] Remover tela de criação de nota e criar a partir da tela inicial e apresentar título genérico na tela
   - [x] Apresentar notificação Toast ao criar nota
   - [x] Melhorar responsividade web/mobile
-  - [ ] Criação de comentários atrelados a notas
-  - [ ] Criação de comentários soltos.
+  - [x] Criação de comentários atrelados a notas
+  - [ ] ~~Criação de comentários soltos~~.
   - [ ] Aplicar paginação de resultados.
   - [ ] Aplicar opções de ordenação nos resultados
   - [ ] Aplicar filtros de data

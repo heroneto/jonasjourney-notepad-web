@@ -65,8 +65,6 @@ export default function Notes(){
       setExecucoes(exec => exec + 1)
     }, 1000)  
 	}
-
-
   
   useEffect(() => {       
 		getNotes()
