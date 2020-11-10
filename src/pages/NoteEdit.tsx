@@ -90,7 +90,8 @@ const NoteEdit = () => {
     }
     const result = await api.post(`/comments`, body)    
     if(result.status === 200){
-      setComments(comments => [...comments, result.data])
+      setComments(comments => [result.data, ...comments])
+      setNewCommentBody("")
     }
   }
 
@@ -177,7 +178,7 @@ const NoteEdit = () => {
                 return (
                   <div key={comment._id} className="comment">
                     <span className="commentDate">
-                      {comment.date}
+                      {new Date(comment.date).toLocaleString()}
                     </span>
                     <span className="commentText">
                       {comment.body}

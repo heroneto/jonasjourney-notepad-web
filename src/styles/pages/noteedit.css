@@ -388,6 +388,11 @@
   }
 
   .comment-edit-modal {
-    padding: 10%;
+    padding: 0px;
+  }
+
+  .comment-edit-modal .editor {
+    display: flex;
+    flex-direction: column;
   }
 }

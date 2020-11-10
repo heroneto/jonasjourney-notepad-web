@@ -12,13 +12,13 @@ export default function Routes(){
     return (
         <BrowserRouter>
                 <Switch>
-                        <Route exact path={process.env.PUBLIC_URL + "/"}>
+                        <Route exact path="/">
                         <Notes />
                     </Route>
-                    <Route path={process.env.PUBLIC_URL + "/notes"}>
+                    <Route path="/notes">
                         <Notes />
                     </Route>
-                    <Route path={process.env.PUBLIC_URL + "/note/:id"}>
+                    <Route path="/note/:id">
                         <NoteEdit />
                     </Route>
                 </Switch>
