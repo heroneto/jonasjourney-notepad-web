@@ -20,7 +20,7 @@ Este projeto foi criado para fins acadêmicos em React JS com Typescript. É um 
   - [ ] ~~Criação de comentários soltos~~.
   - [x] Aplicar paginação de resultados.
   - [x] Aplicar opções de ordenação nos resultados
-  - [ ] Aplicar filtros de data
+  - [x] Aplicar filtros de data
   - [x] Parametrizar servidor backend
 
 ## Screenshots

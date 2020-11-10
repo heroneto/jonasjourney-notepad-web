@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { FiChevronLeft, FiSave, FiSend, FiX } from 'react-icons/fi'
+import { FiChevronLeft, FiSend, FiX } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import api from '../services/api'
 import '../styles/pages/noteedit.css'
@@ -196,13 +196,6 @@ const NoteEdit = () => {
               </div>
             </div>
           </div>
-          
-          {/* <button 
-            className="floatIcon"
-            onClick={updateNote}
-          >
-            <FiSave size={32} color={"#FFF"} />
-          </button> */}
 
           {showCommentModal && 
             <div className="comment-edit-modal">
