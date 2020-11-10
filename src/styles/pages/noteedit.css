@@ -305,8 +305,8 @@
   border: none;
   padding: 18px;
   box-sizing: border-box;
-  display: grid;
-  grid-template-columns: 1fr 350px;
+  display: flex;
+  flex-direction: column;
 }
 
 .comment-edit-modal .editor .inputContainer {
@@ -389,10 +389,17 @@
 
   .comment-edit-modal {
     padding: 0px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    /* height: 50vh; */
+    
   }
 
   .comment-edit-modal .editor {
     display: flex;
     flex-direction: column;
+    height: 30%;
   }
 }

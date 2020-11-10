@@ -90,7 +90,7 @@ const NoteEdit = () => {
     }
     const result = await api.post(`/comments`, body)    
     if(result.status === 200){
-      setComments(comments => [result.data, ...comments])
+      setComments(comments => [...comments, result.data])
       setNewCommentBody("")
     }
   }
@@ -201,12 +201,14 @@ const NoteEdit = () => {
 
           {showCommentModal && 
             <div className="comment-edit-modal">
+              
               <div className="editor">
+              <span className="title">Edição de comentário</span>
                 <button onClick={() => setShowCommentModal(false)} className="closeModal">
                   <FiX size={24}/>
                 </button>
                 <div className="inputContainer">
-                  <textarea value={editCommentBody} onChange={e => setEditCommentBody(e.target.value)} className="commentInput"  placeholder="Insira o comentário aqui..."/>
+                  <textarea maxLength={250} value={editCommentBody} onChange={e => setEditCommentBody(e.target.value)} className="commentInput"  placeholder="Insira o comentário aqui..."/>
                   <button onClick={updateComment}>
                     <FiSend size={24}/>
                   </button>
