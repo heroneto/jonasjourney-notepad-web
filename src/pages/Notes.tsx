@@ -102,6 +102,9 @@ export default function Notes(){
       if(result.status === 200){
         setTotal(result.data.total)
         setNotes(result.data.notes)
+        if(result.data.total === result.data.notes){
+          setShowNextPageButton(false)
+        }
       }
     })    
 	}, [limit, sortBy, sortOrder])
