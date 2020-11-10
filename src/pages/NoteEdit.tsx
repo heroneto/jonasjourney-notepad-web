@@ -69,12 +69,13 @@ const NoteEdit = () => {
   }
 
   async function updateNote(){
+    const [ year, month, day ] = date.split('-')
     const bodyReq = {
 			title,
 			body,
-			date,
+			date: new Date(Number(year), Number(month)-1, Number(day)),
 			id
-		}
+    }
     const result = await api.put(`/notes`, bodyReq)
     if(result.status === 200) {
       history.push('/notes')
