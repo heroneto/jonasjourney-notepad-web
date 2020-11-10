@@ -85,7 +85,7 @@ const NoteEdit = () => {
     const body = {
       body: newCommentBody,
       noteId: id,
-      date: new Date().toLocaleDateString()
+      date: new Date()
     }
     const result = await api.post(`/comments`, body)    
     if(result.status === 200){
@@ -160,52 +160,49 @@ const NoteEdit = () => {
               <input onChange={e => setDate(e.target.value)} required type="date" className="date" placeholder="Insira a data.."  defaultValue={date}/>
             </div>
             <div className="editor">
-              <textarea value={body} onChange={e => setBody(e.target.value)}  className="noteInput" placeholder="Fale um pouco da sua jornada..."/>
+              <textarea maxLength={2000} value={body} onChange={e => setBody(e.target.value)}  className="noteInput" placeholder="Fale um pouco da sua jornada..."/>
               <div className="comments-container">
                 <span className="title">
                   Comentários
                 </span>
                 <div className="inputContainer">
-                  <textarea onChange={e => setNewCommentBody(e.target.value)} value={newCommentBody} className="commentInput"  placeholder="Insira o comentário aqui..."/>
+                  <textarea maxLength={250} onChange={e => setNewCommentBody(e.target.value)} value={newCommentBody} className="commentInput"  placeholder="Insira o comentário aqui..."/>
                   <button onClick={addComment}>
                     <FiSend size={24}/>
                   </button>
                 </div>                
                 <div className="commentList">
-                  {comments.map(comment => {
-                    return (
-                      <div key={comment._id} className="comment">
-                        <span className="commentDate">
-                          {comment.date}
-                        </span>
-                        <span className="commentText">
-                          {comment.body}
-                        </span>
-                        <div className="commentActions">
-                          <button onClick={() => removeComment(comment._id)} className="removeComment">
-                            Remover
-                          </button>
-                          <button onClick={() => showCommentEditor(comment._id)} className="editComment">
-                            Editar
-                          </button>
-                        </div>
-                      </div>
-                    )
-                  })}
-
-                  
-                </div>
-                
+              {comments.map(comment => {
+                return (
+                  <div key={comment._id} className="comment">
+                    <span className="commentDate">
+                      {comment.date}
+                    </span>
+                    <span className="commentText">
+                      {comment.body}
+                    </span>
+                    <div className="commentActions">
+                      <button onClick={() => removeComment(comment._id)} className="removeComment">
+                        Remover
+                      </button>
+                      <button onClick={() => showCommentEditor(comment._id)} className="editComment">
+                        Editar
+                      </button>
+                    </div>
+                  </div>
+                )
+              })}              
+            </div>                
               </div>
             </div>
           </div>
-
-          <button 
+          
+          {/* <button 
             className="floatIcon"
             onClick={updateNote}
           >
             <FiSave size={32} color={"#FFF"} />
-          </button>
+          </button> */}
 
           {showCommentModal && 
             <div className="comment-edit-modal">

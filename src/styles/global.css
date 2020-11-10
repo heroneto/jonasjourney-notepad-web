@@ -14,8 +14,8 @@ body, * {
 
 .floatIcon {
     position: fixed;
-    right: 16px;
-    bottom: 16px;
+    right: 24px;
+    bottom: 32px;
     border: none;
     border-radius: 50%;
     background-color: #3F7F7F;

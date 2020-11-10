@@ -8,15 +8,16 @@
     overflow-x: scroll;
 }
 
-.notes-view-container input {
+.notes-view-container input, select {
     background-color: #F3F2EA;
     border: none;
     border-radius: 4px;
     padding: 10px;
     box-sizing: border-box;
+    
 }
 
-.notes-view-container .button{
+.notes-view-container .button, .toggleOption, .button-clear{
     padding: 8px;
     border: none;
     border-radius: 4px;
@@ -33,7 +34,9 @@
     text-decoration: none;    
 }
 
-.notes-view-container .button:hover {
+
+
+.notes-view-container .button:hover, .button-clear:hover {
     background-color: #4a9e9e;
 }
 
@@ -47,6 +50,7 @@
     grid-template-columns: 1fr;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
 .notes-view-container .listContainer .titleContainer .toggleMenu {
@@ -74,14 +78,88 @@
     align-items: center;
 }
 
-.notes-view-container .listContainer .listActionsContainer input{
-    width: 90%;
-    max-width: 500px;
-    margin-top: 32px;
+.notes-view-container .listContainer .listActionsContainer .searchData {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
 }
 
-.notes-view-container .listContainer .listActionsContainer .button {
+.notes-view-container .listContainer .listActionsContainer .searchData input{
+    width: 90%;
+    max-width: 500px;
+}
+
+.notes-view-container .listContainer .listActionsContainer .searchData input:disabled{
+    background-color: #9b9a95;
+}
+.notes-view-container .listContainer .listActionsContainer .searchData .button-clear {
+    margin: 0;
+    width: auto;
+}
+
+.notes-view-container .listContainer .listActionsContainer .button-clear {
     margin-top: 10px;    
+}
+
+.notes-view-container .listHeader{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px;   
+}
+
+.notes-view-container .listInfo{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    justify-content: flex-end;
+    font-size: 12px;
+    font-weight: 600px;
+
+}
+
+.notes-view-container .toggleOption{
+    width: 32px;
+    padding: 5px;
+    background-color: #F3F2EA;
+    color: #5a5a57;
+    
+    
+}
+
+.notes-view-container .toggleOption:hover{
+    background-color: #d1d1ce;
+}
+
+.notes-view-container .toggleOption:disabled{
+    background-color: #9b9a95;
+}
+
+
+.notes-view-container .listContainer .listOptions {
+    display: flex;
+    flex-direction: column;
+}
+
+.notes-view-container .listContainer .listHeader .listOptions .closeOptions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.notes-view-container .listContainer .listOptions .label {
+    font-size: 14px;
+    font-weight: 500;
+    text-align: end;
+}
+
+.notes-view-container .listContainer .listOptions .options {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
 }
 
 .notes-view-container .listContainer .list {
@@ -100,13 +178,15 @@
     margin-bottom: 16px;
 }
 
-.notes-view-container .listContainer .list .itemContainer {
+.notes-view-container .listContainer .list .itemContainer, .itemContainer-nextPage {
     border: none;
     display: flex;
     width: 100%;
+    height: 100%;
     background-color: #FBFCF7;
     color: #000;
     justify-content: center;
+    align-items: center;
     cursor: pointer;
     transition: .2s;
     outline: 0 !important;
@@ -114,7 +194,14 @@
     text-decoration: none;
 }
 
-.notes-view-container .listContainer .list .itemContainer:hover {
+.notes-view-container .listContainer .list .itemContainer-nextPage {
+    font-size: 18px;
+    font-weight: 800;
+    border-radius: 3px;
+    color: #5c5c5c;
+}
+
+.notes-view-container .listContainer .list .itemContainer:hover, .itemContainer-nextPage:hover {
     background-color: #F3F2EA;
 }
 

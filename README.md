@@ -18,10 +18,10 @@ Este projeto foi criado para fins acadêmicos em React JS com Typescript. É um 
   - [x] Melhorar responsividade web/mobile
   - [x] Criação de comentários atrelados a notas
   - [ ] ~~Criação de comentários soltos~~.
-  - [ ] Aplicar paginação de resultados.
-  - [ ] Aplicar opções de ordenação nos resultados
+  - [x] Aplicar paginação de resultados.
+  - [x] Aplicar opções de ordenação nos resultados
   - [ ] Aplicar filtros de data
-  - [ ] Parametrizar servidor backend
+  - [x] Parametrizar servidor backend
 
 ## Screenshots
 
