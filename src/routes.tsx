@@ -1,8 +1,8 @@
 import React from 'react'
 import {
-    BrowserRouter,
     Switch,
-    Route
+    Route,
+    BrowserRouter
 } from 'react-router-dom'
 import Notes from './pages/Notes'
 import NoteEdit from './pages/NoteEdit'
@@ -10,20 +10,18 @@ import NoteEdit from './pages/NoteEdit'
 
 export default function Routes(){
     return (
-        <>
-            <BrowserRouter>
+        <BrowserRouter>
                 <Switch>
-                    <Route exact path="/">
+                        <Route exact path={process.env.PUBLIC_URL + "/"}>
                         <Notes />
                     </Route>
-                    <Route path="/notes">
+                    <Route path={process.env.PUBLIC_URL + "/notes"}>
                         <Notes />
                     </Route>
-                    <Route path="/note/:id">
+                    <Route path={process.env.PUBLIC_URL + "/note/:id"}>
                         <NoteEdit />
                     </Route>
                 </Switch>
-            </BrowserRouter>
-        </>
+        </BrowserRouter>
     )
 }
