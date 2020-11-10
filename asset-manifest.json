@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/jonasjourney-notepad-web/static/css/main.5b2e385d.chunk.css",
-    "main.js": "/jonasjourney-notepad-web/static/js/main.6465c108.chunk.js",
-    "main.js.map": "/jonasjourney-notepad-web/static/js/main.6465c108.chunk.js.map",
+    "main.js": "/jonasjourney-notepad-web/static/js/main.60c665a1.chunk.js",
+    "main.js.map": "/jonasjourney-notepad-web/static/js/main.60c665a1.chunk.js.map",
     "runtime-main.js": "/jonasjourney-notepad-web/static/js/runtime-main.253e6323.js",
     "runtime-main.js.map": "/jonasjourney-notepad-web/static/js/runtime-main.253e6323.js.map",
     "static/css/2.ccc6f86f.chunk.css": "/jonasjourney-notepad-web/static/css/2.ccc6f86f.chunk.css",
-    "static/js/2.bd7e3325.chunk.js": "/jonasjourney-notepad-web/static/js/2.bd7e3325.chunk.js",
-    "static/js/2.bd7e3325.chunk.js.map": "/jonasjourney-notepad-web/static/js/2.bd7e3325.chunk.js.map",
+    "static/js/2.b19db4b5.chunk.js": "/jonasjourney-notepad-web/static/js/2.b19db4b5.chunk.js",
+    "static/js/2.b19db4b5.chunk.js.map": "/jonasjourney-notepad-web/static/js/2.b19db4b5.chunk.js.map",
     "index.html": "/jonasjourney-notepad-web/index.html",
     "static/css/2.ccc6f86f.chunk.css.map": "/jonasjourney-notepad-web/static/css/2.ccc6f86f.chunk.css.map",
     "static/css/main.5b2e385d.chunk.css.map": "/jonasjourney-notepad-web/static/css/main.5b2e385d.chunk.css.map",
-    "static/js/2.bd7e3325.chunk.js.LICENSE.txt": "/jonasjourney-notepad-web/static/js/2.bd7e3325.chunk.js.LICENSE.txt"
+    "static/js/2.b19db4b5.chunk.js.LICENSE.txt": "/jonasjourney-notepad-web/static/js/2.b19db4b5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.253e6323.js",
     "static/css/2.ccc6f86f.chunk.css",
-    "static/js/2.bd7e3325.chunk.js",
+    "static/js/2.b19db4b5.chunk.js",
     "static/css/main.5b2e385d.chunk.css",
-    "static/js/main.6465c108.chunk.js"
+    "static/js/main.60c665a1.chunk.js"
   ]
 }
